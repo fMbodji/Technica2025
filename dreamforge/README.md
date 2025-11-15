@@ -187,6 +187,7 @@ MIT License
 
 ## Team
 Fatima Mbodji - Developer
+
 Sri Mummidi - Developer 
 
 ## Contact Questions? 
