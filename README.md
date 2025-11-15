@@ -1,7 +1,7 @@
 🔨 DreamForge
 Where curiosity meets capability.
 
-💡 The Problem
+💡 Description
 What if your grandmother could build the family history website she's always imagined? What if that middle schooler's wild app idea could actually come to life?
 Millions have ideas they want to bring to life, but coding feels inaccessible—too complex for beginners, too intimidating for older learners, too generic for young creators. The gap between "I wish I could make..." and "Look what I made!" keeps brilliant ideas locked away.
 
