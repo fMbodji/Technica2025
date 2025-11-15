@@ -41,14 +41,19 @@ Elders: "Family Recipe Collection," "Memory Photo Album," "Hobby Blog"
 Frontend
 
 Framework: React 18 + Vite
+
 Styling: Tailwind CSS
+
 Drag & Drop: @dnd-kit/core (Middle School tier)
+
 Icons: Lucide React
 
 Backend
 
 Runtime: Node.js + Express
+
 AI Integration: Anthropic Claude API
+
 Storage: LocalStorage (MVP) / Firebase (production-ready)
 
 Additional Tools
@@ -79,7 +84,7 @@ bashnode >= 18.0.0
 npm >= 9.0.0
 Installation
 bash# Clone the repository
-git clone https://github.com/fMbodji/dreamforge.git
+git clone https://github.com/fMbodji/Technica2025
 cd dreamforge
 
 # Install frontend dependencies
