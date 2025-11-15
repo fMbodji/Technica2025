@@ -1,44 +1,47 @@
 🔨 DreamForge
+
 Where curiosity meets capability.
 
 💡 Description
-What if your grandmother could build the family history website she's always imagined? What if that middle schooler's wild app idea could actually come to life?
-Millions have ideas they want to bring to life, but coding feels inaccessible—too complex for beginners, too intimidating for older learners, too generic for young creators. The gap between "I wish I could make..." and "Look what I made!" keeps brilliant ideas locked away.
+
+What if your grandmother could build the family history website she's always imagined? What if that middle schooler's wild app idea could actually come to life? Millions have ideas they want to bring to life, but coding feels inaccessible—too complex for beginners, too intimidating for older learners, too generic for young creators. The gap between "I wish I could make..." and "Look what I made!" keeps brilliant ideas locked away.
 
 🚀 Our Solution
-DreamForge is an AI-powered creation platform that bridges this gap by adapting to learners at every life stage—from middle school students building their first game to elders creating meaningful digital legacies.
-By personalizing the interface, language, and project suggestions to each learner's age, interests, and goals, we're democratizing the power to bring ideas to life. Whether you're 12 or 72, your dream project is just a conversation away.
+
+DreamForge is an AI-powered creation platform that bridges this gap by adapting to learners at every life stage—from middle school students building their first game to elders creating meaningful digital legacies. By personalizing the interface, language, and project suggestions to each learner's age, interests, and goals, we are empowering them to bring ideas to life. Whether you're 12 or 72, your dream project is just a conversation away.
+
 ✨ Key Features
 
-🎯 Age-Adaptive Interface: Same powerful technology, completely different experience
+🎯 Age-Adaptive Interface: 
 
+Same powerful technology, completely different experience
 Playful blocks and game-based learning for middle schoolers
 Clear, patient guidance with large UI for elders
 Professional tools for college students
 
+🤖 Personalized AI Mentor: 
 
-🤖 Personalized AI Mentor: Automatically adjusts tone, complexity, and teaching style
-
+Automatically adjusts tone, complexity, and teaching style
 Enthusiastic coding buddy for kids
 Respectful, jargon-free teacher for older learners
 
 
-🎨 Real Project Templates: Build things you actually care about
+🎨 Real Project Templates: 
 
+Build things you actually care about
 Middle School: "My Pet Game," "Dream Bedroom Designer," "Superhero Story"
 Elders: "Family Recipe Collection," "Memory Photo Album," "Hobby Blog"
 
 
-⚡ Live Preview: See your creation come to life in real-time
 🏆 Achievement System: Celebrate every milestone, big or small
-🎤 Voice Input: Accessibility-first design for all learners
+
 
 🛠️ Tech Stack
+
 Frontend
 
 Framework: React 18 + Vite
 Styling: Tailwind CSS
-UI Components: shadcn/ui
 Drag & Drop: @dnd-kit/core (Middle School tier)
 Icons: Lucide React
 
@@ -50,12 +53,12 @@ Storage: LocalStorage (MVP) / Firebase (production-ready)
 
 Additional Tools
 
-Voice Input: Web Speech API
 Code Preview: Monaco Editor
 Deployment: Vercel (frontend) + Railway (backend)
 
 🎯 Demo Tiers (MVP)
 For this hackathon, we're showcasing two tiers to demonstrate maximum contrast:
+
 1. Middle School Tier
 
 Block-based visual programming
@@ -76,7 +79,7 @@ bashnode >= 18.0.0
 npm >= 9.0.0
 Installation
 bash# Clone the repository
-git clone https://github.com/yourusername/dreamforge.git
+git clone https://github.com/fMbodji/dreamforge.git
 cd dreamforge
 
 # Install frontend dependencies
@@ -124,20 +127,20 @@ Offline Mode: Work anywhere, sync when connected
 
 👥 Team
 
-[Your Name] - Role
-[Team Member 2] - Role
-[Team Member 3] - Role
+Fatima Mbodji - Developer
+Sri Mummidi - Developer
+
 
 🙏 Acknowledgments
 
 Anthropic for Claude API
-[Hackathon Name] for the opportunity
+Technica Hackathon for the opportunity
 Our beta testers across all age groups
 
 📄 License
 MIT License - see LICENSE for details
 📞 Contact
-Questions? Reach out to us at [your-email@example.com]
+Questions? Reach out to us at smummidi@terpmail.umd.edu
 
-Built with ❤️ at [Hackathon Name] 2024
+Built with ❤️ at Technica Hackathon 2025
 "Because the next great idea could come from a dorm room, a classroom, or a retirement home."
