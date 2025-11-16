@@ -24,10 +24,13 @@ export default function Landing() {
             DreamForge
           </h1>
           <p className="text-2xl md:text-3xl text-primary mb-6">
-            Where curiosity meets capability
+            A bridge between aspiration and achievement
           </p>
-          <p className="text-lg md:text-xl text-navy/80 max-w-2xl mx-auto">
-            An AI-powered creation platform that adapts to learners at every life stage—from middle school students building their first game to elders creating meaningful digital legacies.
+          <p className="text-lg md:text-xl text-navy/80 max-w-2xl mx-auto mb-6">
+            The grandmother who wants to share her garden wisdom. The middle schooler with a wild game idea. The career changer who thought they "weren't technical enough."
+          </p>
+          <p className="text-xl md:text-2xl font-semibold text-navy max-w-2xl mx-auto">
+            DreamForge empowers them all—meeting people where they are, not where we think they should be.
           </p>
         </div>
 
@@ -47,7 +50,7 @@ export default function Landing() {
                 I'm in Middle School 🎮
               </h2>
               <p className="text-lg text-navy/70 mb-6">
-                Build games, stories, and fun projects with colorful blocks and an enthusiastic AI buddy!
+                You have BIG ideas. We give you the tools to bring them to life—with colorful blocks, instant previews, and an AI mentor who believes in you.
               </p>
             </div>
             <Button
@@ -74,7 +77,7 @@ export default function Landing() {
                 I'm Exploring Technology Later in Life 👴👵
               </h2>
               <p className="text-lg text-navy/70 mb-6">
-                Create meaningful projects with clear guidance, large text, and patient support.
+                Your wisdom deserves to be shared. We make it easy—with voice input, clear guidance, and patient support that honors your experience.
               </p>
             </div>
             <Button
@@ -94,22 +97,22 @@ export default function Landing() {
             <div className="bg-primary/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
               <Sparkles className="text-primary" size={32} aria-hidden="true" />
             </div>
-            <h3 className="font-heading text-xl font-semibold mb-2">Age-Adaptive</h3>
-            <p className="text-navy/70">Same powerful AI, completely different experience</p>
+            <h3 className="font-heading text-xl font-semibold mb-2">Truly Adaptive</h3>
+            <p className="text-navy/70">Age-adaptive AI tutoring that meets you where you are—interface, language, and pace all personalized</p>
           </div>
           <div className="text-center">
             <div className="bg-secondary/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
               <Code className="text-secondary" size={32} aria-hidden="true" />
             </div>
-            <h3 className="font-heading text-xl font-semibold mb-2">Real Projects</h3>
-            <p className="text-navy/70">Build things you actually care about</p>
+            <h3 className="font-heading text-xl font-semibold mb-2">Your Projects</h3>
+            <p className="text-navy/70">From "I wish I could" to "Look what I made"—build things that matter to you</p>
           </div>
           <div className="text-center">
             <div className="bg-accent/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
               <Users className="text-accent" size={32} aria-hidden="true" />
             </div>
-            <h3 className="font-heading text-xl font-semibold mb-2">For Everyone</h3>
-            <p className="text-navy/70">Accessible to learners of all ages</p>
+            <h3 className="font-heading text-xl font-semibold mb-2">Empowering All Ages</h3>
+            <p className="text-navy/70">Because the next great idea could come from anywhere—a classroom or a retirement home</p>
           </div>
         </div>
       </div>
