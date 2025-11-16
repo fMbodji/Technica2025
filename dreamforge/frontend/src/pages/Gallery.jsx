@@ -3,9 +3,11 @@ import { Eye } from 'lucide-react'
 import Layout from '../components/shared/Layout'
 import Card from '../components/shared/Card'
 import Button from '../components/shared/Button'
-import { STORAGE_KEYS, TIER_LABELS } from '../utils/constants'
+import { STORAGE_KEYS, EXPERTISE_LABELS, AGE_RANGE_LABELS } from '../utils/constants'
+import { useProfile } from '../hooks/useProfile'
 
 export default function Gallery() {
+  const { ageRange } = useProfile()
   const [projects, setProjects] = useState([])
   const [filter, setFilter] = useState('all')
 
@@ -23,28 +25,31 @@ export default function Gallery() {
 
   const filteredProjects = filter === 'all' 
     ? projects 
-    : projects.filter(p => p.tier === filter)
+    : projects.filter(p => p.expertise === filter || p.ageRange === filter)
 
   const sampleProjects = [
     {
       id: 'sample-1',
       title: 'My Pet Game',
       description: 'A fun game where you take care of virtual pets',
-      tier: 'middleSchool',
+      expertise: 'beginner',
+      ageRange: '6-13',
       createdAt: new Date().toISOString()
     },
     {
       id: 'sample-2',
       title: 'Family Recipe Collection',
       description: 'A beautiful collection of family recipes with photos',
-      tier: 'elder',
+      expertise: 'beginner',
+      ageRange: '55+',
       createdAt: new Date().toISOString()
     },
     {
       id: 'sample-3',
       title: 'Dream Bedroom Designer',
       description: 'Design your perfect bedroom with interactive tools',
-      tier: 'middleSchool',
+      expertise: 'beginner',
+      ageRange: '14-17',
       createdAt: new Date().toISOString()
     }
   ]
@@ -52,7 +57,7 @@ export default function Gallery() {
   const displayProjects = filteredProjects.length > 0 ? filteredProjects : sampleProjects
 
   return (
-    <Layout>
+    <Layout ageRange={ageRange}>
       <div className="max-w-6xl mx-auto py-8">
         <div className="text-center mb-8">
           <h1 className="font-heading text-4xl font-bold text-navy mb-4">
@@ -63,7 +68,7 @@ export default function Gallery() {
           </p>
         </div>
 
-        <div className="flex justify-center gap-4 mb-8">
+        <div className="flex justify-center gap-4 mb-8 flex-wrap">
           <Button
             variant={filter === 'all' ? 'primary' : 'outline'}
             size="md"
@@ -72,18 +77,25 @@ export default function Gallery() {
             All Projects
           </Button>
           <Button
-            variant={filter === 'middleSchool' ? 'primary' : 'outline'}
+            variant={filter === 'beginner' ? 'primary' : 'outline'}
             size="md"
-            onClick={() => setFilter('middleSchool')}
+            onClick={() => setFilter('beginner')}
           >
-            Middle School
+            Beginner
           </Button>
           <Button
-            variant={filter === 'elder' ? 'primary' : 'outline'}
+            variant={filter === 'intermediate' ? 'primary' : 'outline'}
             size="md"
-            onClick={() => setFilter('elder')}
+            onClick={() => setFilter('intermediate')}
           >
-            Elder
+            Intermediate
+          </Button>
+          <Button
+            variant={filter === 'advanced' ? 'primary' : 'outline'}
+            size="md"
+            onClick={() => setFilter('advanced')}
+          >
+            Advanced
           </Button>
         </div>
 
@@ -98,13 +110,13 @@ export default function Gallery() {
             {displayProjects.map((project) => (
               <Card
                 key={project.id}
-                tier={project.tier}
+                ageRange={project.ageRange || ageRange}
                 className="flex flex-col"
               >
                 <div className="flex-1">
                   <div className="flex items-center justify-between mb-3">
                     <span className="text-sm font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full">
-                      {TIER_LABELS[project.tier] || 'Project'}
+                      {EXPERTISE_LABELS[project.expertise] || 'Project'} • {AGE_RANGE_LABELS[project.ageRange] || ''}
                     </span>
                   </div>
                   <h3 className="font-heading text-xl font-bold text-navy mb-2">
@@ -117,7 +129,7 @@ export default function Gallery() {
                 <Button
                   variant="outline"
                   size="sm"
-                  tier={project.tier}
+                  ageRange={project.ageRange || ageRange}
                   className="w-full"
                 >
                   <Eye size={18} className="mr-2" aria-hidden="true" />
@@ -131,4 +143,3 @@ export default function Gallery() {
     </Layout>
   )
 }
-

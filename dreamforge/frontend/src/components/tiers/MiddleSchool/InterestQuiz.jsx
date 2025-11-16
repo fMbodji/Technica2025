@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Gamepad2, Palette, Heart, Trophy } from 'lucide-react'
 import Card from '../../shared/Card'
 import Button from '../../shared/Button'
-import { INTERESTS, INTEREST_LABELS, TIERS } from '../../../utils/constants'
+import { INTERESTS, INTEREST_LABELS } from '../../../utils/constants'
 
 const INTEREST_ICONS = {
   [INTERESTS.GAMING]: Gamepad2,
@@ -47,7 +47,6 @@ export default function InterestQuiz({ onComplete }) {
           return (
             <Card
               key={interest}
-              tier={TIERS.MIDDLE_SCHOOL}
               interactive
               onClick={() => toggleInterest(interest)}
               className={`text-center cursor-pointer transition-all ${

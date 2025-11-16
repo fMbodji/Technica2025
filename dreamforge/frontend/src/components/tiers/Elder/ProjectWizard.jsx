@@ -3,7 +3,7 @@ import Card from '../../shared/Card'
 import Button from '../../shared/Button'
 import Input from '../../shared/Input'
 import StepProgress from './StepProgress'
-import { TIERS } from '../../../utils/constants'
+import { useProfile } from '../../../hooks/useProfile'
 
 const WIZARD_STEPS = [
   {
@@ -46,6 +46,7 @@ const WIZARD_STEPS = [
 ]
 
 export default function ProjectWizard({ onComplete, onSave }) {
+  const { ageRange } = useProfile()
   const [currentStep, setCurrentStep] = useState(1)
   const [formData, setFormData] = useState({
     idea: '',
@@ -102,7 +103,7 @@ export default function ProjectWizard({ onComplete, onSave }) {
         }}
       />
 
-      <Card tier={TIERS.ELDER} className="mb-8">
+      <Card ageRange={ageRange} className="mb-8">
         <h2 className="text-3xl font-heading font-bold text-navy mb-6">
           {currentStepData.title}
         </h2>
@@ -118,7 +119,7 @@ export default function ProjectWizard({ onComplete, onSave }) {
               value={formData.idea}
               onChange={(e) => handleInputChange('idea', e.target.value)}
               placeholder={currentStepData.placeholder}
-              tier={TIERS.ELDER}
+              ageRange={ageRange}
               className="mt-4"
             />
           )}
@@ -150,7 +151,7 @@ export default function ProjectWizard({ onComplete, onSave }) {
               value={formData.content}
               onChange={(e) => handleInputChange('content', e.target.value)}
               placeholder={currentStepData.placeholder}
-              tier={TIERS.ELDER}
+              ageRange={ageRange}
               className="mt-4"
             />
           )}

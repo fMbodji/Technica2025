@@ -3,19 +3,16 @@ import { Send, Mic } from 'lucide-react'
 import Button from '../shared/Button'
 import Input from '../shared/Input'
 
-export default function ChatInput({ onSend, tier, onVoiceInput }) {
+export default function ChatInput({ onSend, ageRange, expertise, onVoiceInput }) {
   const [message, setMessage] = useState('')
   const inputRef = useRef(null)
 
-  // Edit
-
-
   useEffect(() => {
-    // Auto-focus input for elder tier
-    if (tier === 'elder' && inputRef.current) {
+    // Auto-focus input for 55+ age range
+    if (ageRange === '55+' && inputRef.current) {
       inputRef.current.focus()
     }
-  }, [tier])
+  }, [ageRange])
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -32,22 +29,26 @@ export default function ChatInput({ onSend, tier, onVoiceInput }) {
     }
   }
 
+  // Voice input available for 6-13 and 55+
+  const showVoiceInput = (ageRange === '55+' || ageRange === '6-13') && onVoiceInput
+  const buttonSize = ageRange === '55+' ? 'lg' : 'md'
+  const inputSize = ageRange === '55+' ? 'xl' : ageRange === '6-13' ? 'lg' : 'md'
+
   return (
     <form 
       onSubmit={handleSubmit}
       className="border-t-2 border-warmGray bg-white p-4"
     >
       <div className="flex gap-2 items-end">
-        {tier === 'elder' && onVoiceInput && (
+        {showVoiceInput && (
           <Button
             type="button"
             variant="outline"
-            size={tier === 'elder' ? 'lg' : 'md'}
-            tier={tier}
+            size={buttonSize}
             onClick={onVoiceInput}
             aria-label="Use voice input"
           >
-            <Mic size={tier === 'elder' ? 24 : 20} aria-hidden="true" />
+            <Mic size={ageRange === '55+' ? 24 : 20} aria-hidden="true" />
           </Button>
         )}
         <div className="flex-1">
@@ -56,23 +57,27 @@ export default function ChatInput({ onSend, tier, onVoiceInput }) {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             onKeyPress={handleKeyPress}
-            placeholder={tier === 'elder' ? "Type your message here..." : "Ask me anything! 😊"}
-            tier={tier}
+            placeholder={
+              ageRange === '55+' 
+                ? "Type your message here..." 
+                : ageRange === '6-13'
+                ? "Ask me anything! 😊"
+                : "Type your message..."
+            }
+            ageRange={ageRange}
             aria-label="Chat message input"
           />
         </div>
         <Button
           type="submit"
           variant="primary"
-          size={tier === 'elder' ? 'lg' : 'md'}
-          tier={tier}
+          size={buttonSize}
           disabled={!message.trim()}
           aria-label="Send message"
         >
-          <Send size={tier === 'elder' ? 24 : 20} aria-hidden="true" />
+          <Send size={ageRange === '55+' ? 24 : 20} aria-hidden="true" />
         </Button>
       </div>
     </form>
   )
 }
-

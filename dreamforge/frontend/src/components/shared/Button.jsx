@@ -2,7 +2,7 @@ export default function Button({
   children, 
   variant = 'primary', 
   size = 'md',
-  tier,
+  ageRange,
   className = '',
   disabled = false,
   ...props 
@@ -24,9 +24,10 @@ export default function Button({
     xl: 'px-10 py-6 text-xl'
   }
   
-  // Auto-adjust size for elder tier
-  const adjustedSize = tier === 'elder' && size === 'md' ? 'lg' : 
-                       tier === 'elder' && size === 'sm' ? 'md' : size
+  // Auto-adjust size based on age range
+  const adjustedSize = ageRange === '55+' && size === 'md' ? 'lg' : 
+                       ageRange === '55+' && size === 'sm' ? 'md' :
+                       ageRange === '6-13' && size === 'sm' ? 'md' : size
   
   return (
     <button 
@@ -38,4 +39,3 @@ export default function Button({
     </button>
   )
 }
-

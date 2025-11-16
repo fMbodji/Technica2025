@@ -3,13 +3,12 @@ import { Sparkles, Users, Code } from 'lucide-react'
 import Card from '../components/shared/Card'
 import Button from '../components/shared/Button'
 import Layout from '../components/shared/Layout'
-import { TIERS } from '../utils/constants'
 
 export default function Landing() {
   const navigate = useNavigate()
 
-  const handleTierSelect = (tier) => {
-    navigate(`/tier-selection?tier=${tier}`)
+  const handleGetStarted = () => {
+    navigate('/tier-selection')
   }
 
   return (
@@ -31,59 +30,30 @@ export default function Landing() {
           </p>
         </div>
 
-        {/* Tier Selection Cards */}
-        <div className="grid md:grid-cols-2 gap-8 w-full max-w-4xl mb-12">
-          {/* Middle School Card */}
+        {/* Get Started Card */}
+        <div className="w-full max-w-2xl mb-12">
           <Card
-            tier={TIERS.MIDDLE_SCHOOL}
             interactive
-            onClick={() => handleTierSelect(TIERS.MIDDLE_SCHOOL)}
-            className="text-center hover:border-secondary border-4 border-transparent transition-all"
-            aria-label="Select Middle School tier"
-          >
-            <div className="mb-6">
-              <Code size={64} className="text-secondary mx-auto mb-4" aria-hidden="true" />
-              <h2 className="font-heading text-3xl font-bold text-navy mb-3">
-                I'm in Middle School 🎮
-              </h2>
-              <p className="text-lg text-navy/70 mb-6">
-                Build games, stories, and fun projects with colorful blocks and an enthusiastic AI buddy!
-              </p>
-            </div>
-            <Button
-              variant="secondary"
-              size="lg"
-              tier={TIERS.MIDDLE_SCHOOL}
-              className="w-full"
-            >
-              Start Creating! 🚀
-            </Button>
-          </Card>
-
-          {/* Elder Card */}
-          <Card
-            tier={TIERS.ELDER}
-            interactive
-            onClick={() => handleTierSelect(TIERS.ELDER)}
+            onClick={handleGetStarted}
             className="text-center hover:border-primary border-4 border-transparent transition-all"
-            aria-label="Select Elder tier"
+            aria-label="Get started with DreamForge"
           >
             <div className="mb-6">
-              <Users size={64} className="text-primary mx-auto mb-4" aria-hidden="true" />
+              <Sparkles size={64} className="text-primary mx-auto mb-4" aria-hidden="true" />
               <h2 className="font-heading text-3xl font-bold text-navy mb-3">
-                I'm Exploring Technology Later in Life 👴👵
+                Ready to Create? 🚀
               </h2>
               <p className="text-lg text-navy/70 mb-6">
-                Create meaningful projects with clear guidance, large text, and patient support.
+                We'll personalize your experience based on your expertise level and age range. 
+                Let's get started!
               </p>
             </div>
             <Button
               variant="primary"
               size="lg"
-              tier={TIERS.ELDER}
               className="w-full"
             >
-              Begin Your Journey
+              Get Started
             </Button>
           </Card>
         </div>

@@ -1,9 +1,8 @@
 import { useState, useEffect, useRef } from 'react'
 import { Mic, MicOff } from 'lucide-react'
 import Button from '../../shared/Button'
-import { TIERS } from '../../../utils/constants'
 
-export default function VoiceInput({ onTranscript, tier }) {
+export default function VoiceInput({ onTranscript, ageRange }) {
   const [isListening, setIsListening] = useState(false)
   const [isSupported, setIsSupported] = useState(false)
   const recognitionRef = useRef(null)
@@ -81,7 +80,7 @@ export default function VoiceInput({ onTranscript, tier }) {
       <Button
         variant={isListening ? 'secondary' : 'primary'}
         size="xl"
-        tier={tier}
+        ageRange={ageRange}
         onClick={toggleListening}
         className="w-full max-w-md"
         aria-label={isListening ? 'Stop listening' : 'Start voice input'}

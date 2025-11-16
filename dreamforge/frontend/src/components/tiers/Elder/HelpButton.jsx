@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { HelpCircle, X } from 'lucide-react'
 import Button from '../../shared/Button'
 import Card from '../../shared/Card'
-import { TIERS } from '../../../utils/constants'
 
 const HELP_CONTENT = {
   title: 'Need Help?',
@@ -26,7 +25,7 @@ const HELP_CONTENT = {
   ]
 }
 
-export default function HelpButton({ tier }) {
+export default function HelpButton({ ageRange }) {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
@@ -51,7 +50,7 @@ export default function HelpButton({ tier }) {
           aria-labelledby="help-title"
         >
           <Card
-            tier={tier}
+            ageRange={ageRange}
             className="max-w-2xl w-full max-h-[80vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
@@ -85,7 +84,7 @@ export default function HelpButton({ tier }) {
               <Button
                 variant="primary"
                 size="xl"
-                tier={tier}
+                ageRange={ageRange}
                 onClick={() => setIsOpen(false)}
               >
                 Got it, thank you!

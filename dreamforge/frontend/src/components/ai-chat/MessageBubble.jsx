@@ -1,13 +1,18 @@
-export default function MessageBubble({ message, tier }) {
+export default function MessageBubble({ message, ageRange }) {
   const isUser = message.role === 'user'
   
   const baseStyles = 'rounded-2xl px-6 py-4 max-w-[80%] break-words'
   const userStyles = 'bg-primary text-white ml-auto'
-  const aiStyles = tier === 'elder' 
+  
+  // AI message styles based on age range
+  const aiStyles = ageRange === '55+' || ageRange === '6-13'
     ? 'bg-white text-navy border-2 border-warmGray' 
     : 'bg-secondary/20 text-navy'
   
-  const textSize = tier === 'elder' ? 'text-xl' : 'text-base'
+  // Text size based on age range
+  const textSize = ageRange === '55+' ? 'text-xl' : 
+                   ageRange === '6-13' ? 'text-base' : 
+                   'text-base'
   
   return (
     <div className={`flex ${isUser ? 'justify-end' : 'justify-start'} mb-4`}>
@@ -21,4 +26,3 @@ export default function MessageBubble({ message, tier }) {
     </div>
   )
 }
-

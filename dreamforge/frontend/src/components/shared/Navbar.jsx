@@ -1,17 +1,21 @@
 import { Link, useNavigate } from 'react-router-dom'
 import { Home, HelpCircle, LogOut } from 'lucide-react'
-import { useTier } from '../../hooks/useTier'
-import { TIER_LABELS } from '../../utils/constants'
+import { useProfile } from '../../hooks/useProfile'
+import { EXPERTISE_LABELS, AGE_RANGE_LABELS } from '../../utils/constants'
 import Button from './Button'
 
 export default function Navbar() {
-  const { tier, clearTier } = useTier()
+  const { expertise, ageRange, clearProfile } = useProfile()
   const navigate = useNavigate()
 
   const handleLogout = () => {
-    clearTier()
+    clearProfile()
     navigate('/')
   }
+
+  const displayText = expertise && ageRange 
+    ? `${EXPERTISE_LABELS[expertise]} • ${AGE_RANGE_LABELS[ageRange]}`
+    : null
 
   return (
     <nav className="bg-white shadow-md border-b-2 border-warmGray">
@@ -26,13 +30,13 @@ export default function Navbar() {
           </Link>
 
           <div className="flex items-center gap-4">
-            {tier && (
+            {displayText && (
               <>
                 <span 
-                  className={`font-semibold text-primary ${tier === 'elder' ? 'text-lg' : 'text-base'}`}
-                  aria-label={`Current tier: ${TIER_LABELS[tier]}`}
+                  className={`font-semibold text-primary ${ageRange === '55+' ? 'text-lg' : 'text-base'}`}
+                  aria-label={`Current profile: ${displayText}`}
                 >
-                  {TIER_LABELS[tier]}
+                  {displayText}
                 </span>
                 <Link
                   to="/help"
@@ -40,7 +44,7 @@ export default function Navbar() {
                   aria-label="Get help"
                 >
                   <HelpCircle 
-                    size={tier === 'elder' ? 28 : 24} 
+                    size={ageRange === '55+' ? 28 : 24} 
                     className="text-navy"
                     aria-hidden="true"
                   />
@@ -48,12 +52,12 @@ export default function Navbar() {
                 <Button
                   variant="ghost"
                   size="sm"
-                  tier={tier}
+                  ageRange={ageRange}
                   onClick={handleLogout}
-                  aria-label="Change tier or logout"
+                  aria-label="Change profile or logout"
                 >
-                  <LogOut size={tier === 'elder' ? 24 : 20} className="mr-2" aria-hidden="true" />
-                  Change Tier
+                  <LogOut size={ageRange === '55+' ? 24 : 20} className="mr-2" aria-hidden="true" />
+                  Change Profile
                 </Button>
               </>
             )}
@@ -63,4 +67,3 @@ export default function Navbar() {
     </nav>
   )
 }
-

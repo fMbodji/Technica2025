@@ -1,11 +1,10 @@
 import { Play, Square } from 'lucide-react'
 import Card from '../../shared/Card'
 import Button from '../../shared/Button'
-import { TIERS } from '../../../utils/constants'
 
-export default function ProjectPreview({ code, isRunning, onRun, onStop }) {
+export default function ProjectPreview({ code, isRunning, onRun, onStop, ageRange }) {
   return (
-    <Card tier={TIERS.MIDDLE_SCHOOL} className="h-full flex flex-col">
+    <Card ageRange={ageRange} className="h-full flex flex-col">
       <div className="flex justify-between items-center mb-4">
         <h2 className="font-heading text-2xl font-bold text-navy">
           Preview 👀
@@ -14,7 +13,7 @@ export default function ProjectPreview({ code, isRunning, onRun, onStop }) {
           <Button
             variant="secondary"
             size="sm"
-            tier={TIERS.MIDDLE_SCHOOL}
+            ageRange={ageRange}
             onClick={onRun}
             disabled={!code}
           >
@@ -25,7 +24,7 @@ export default function ProjectPreview({ code, isRunning, onRun, onStop }) {
           <Button
             variant="outline"
             size="sm"
-            tier={TIERS.MIDDLE_SCHOOL}
+            ageRange={ageRange}
             onClick={onStop}
           >
             <Square size={18} className="mr-2" aria-hidden="true" />

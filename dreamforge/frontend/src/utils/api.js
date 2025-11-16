@@ -1,14 +1,19 @@
 // API utility functions
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001'
 
-export async function sendChatMessage(message, tier) {
+export async function sendChatMessage(message, expertise, ageRange, conversationHistory = []) {
   try {
     const response = await fetch(`${API_URL}/api/ai/chat`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ message, tier })
+      body: JSON.stringify({ 
+        message, 
+        expertise, 
+        ageRange,
+        conversationHistory 
+      })
     })
 
     if (!response.ok) {
@@ -60,4 +65,3 @@ export async function getProjects() {
     throw error
   }
 }
-

@@ -3,19 +3,45 @@ import { getAIResponse } from './ai-service.js'
 
 const router = express.Router()
 
-// AI Chat endpoint
+// AI Chat endpoint - Updated for expertise + age range system
 router.post('/ai/chat', async (req, res) => {
   try {
-    const { message, tier } = req.body
+    const { message, expertise, ageRange, conversationHistory = [] } = req.body
 
-    if (!message || !tier) {
+    // Validate required fields
+    if (!message) {
       return res.status(400).json({
         success: false,
-        message: 'Message and tier are required'
+        message: 'Message is required'
       })
     }
 
-    const response = await getAIResponse(message, tier)
+    if (!expertise || !ageRange) {
+      return res.status(400).json({
+        success: false,
+        message: 'Expertise and ageRange are required'
+      })
+    }
+
+    // Validate expertise and ageRange values
+    const validExpertise = ['beginner', 'intermediate', 'advanced']
+    const validAgeRanges = ['6-13', '14-17', '18-24', '25-54', '55+']
+
+    if (!validExpertise.includes(expertise)) {
+      return res.status(400).json({
+        success: false,
+        message: 'Invalid expertise level. Must be: beginner, intermediate, or advanced'
+      })
+    }
+
+    if (!validAgeRanges.includes(ageRange)) {
+      return res.status(400).json({
+        success: false,
+        message: 'Invalid age range. Must be: 6-13, 14-17, 18-24, 25-54, or 55+'
+      })
+    }
+
+    const response = await getAIResponse(message, expertise, ageRange, conversationHistory)
     
     res.json(response)
   } catch (error) {
@@ -28,4 +54,3 @@ router.post('/ai/chat', async (req, res) => {
 })
 
 export default router
-

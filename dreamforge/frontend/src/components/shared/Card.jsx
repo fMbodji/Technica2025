@@ -1,7 +1,7 @@
 export default function Card({ 
   children, 
   className = '', 
-  tier,
+  ageRange,
   onClick,
   interactive = false,
   ...props 
@@ -11,8 +11,12 @@ export default function Card({
     ? 'cursor-pointer hover:shadow-xl hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2' 
     : ''
   
-  // Adjust padding for elder tier
-  const padding = tier === 'elder' ? 'p-8' : 'p-6'
+  // Adjust padding based on age range
+  const padding = ageRange === '55+' 
+    ? 'p-8' 
+    : ageRange === '6-13'
+    ? 'p-6'
+    : 'p-6'
   
   const Component = onClick ? 'button' : 'div'
   
@@ -26,4 +30,3 @@ export default function Card({
     </Component>
   )
 }
-

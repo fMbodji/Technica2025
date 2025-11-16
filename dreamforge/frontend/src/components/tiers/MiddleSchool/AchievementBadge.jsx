@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react'
 import { Trophy, X } from 'lucide-react'
 import Card from '../../shared/Card'
 import Button from '../../shared/Button'
-import { TIERS } from '../../../utils/constants'
 
 const ACHIEVEMENTS = {
   firstBlock: {
@@ -25,7 +24,7 @@ const ACHIEVEMENTS = {
   }
 }
 
-export default function AchievementBadge({ achievementId, onClose }) {
+export default function AchievementBadge({ achievementId, onClose, ageRange }) {
   const [show, setShow] = useState(false)
   const achievement = ACHIEVEMENTS[achievementId]
 
@@ -46,7 +45,7 @@ export default function AchievementBadge({ achievementId, onClose }) {
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50 bg-black/50 animate-fadeIn">
       <Card
-        tier={TIERS.MIDDLE_SCHOOL}
+        ageRange={ageRange}
         className="max-w-md mx-4 animate-bounceIn border-4 border-accent"
       >
         <div className="text-center">
@@ -61,7 +60,7 @@ export default function AchievementBadge({ achievementId, onClose }) {
           <Button
             variant="accent"
             size="md"
-            tier={TIERS.MIDDLE_SCHOOL}
+            ageRange={ageRange}
             onClick={() => {
               setShow(false)
               if (onClose) onClose()
