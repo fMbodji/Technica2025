@@ -1,8 +1,9 @@
 # 🔨 DreamForge
 
-**Where curiosity meets capability.**
+**Where curiosity meets capability**
 
-DreamForge is an AI-powered creation platform that adapts to learners at every life stage—from middle school students building their first game to elders creating meaningful digital legacies.
+DreamForge is an AI-powered creation platform that adapts to learners at every life stage—from middle school students building their first game to elders creating meaningful digital legacies. By personalizing the interface, language, and project suggestions to each learner's age, interests, and goals, we are empowering them to bring ideas to life.
+
 
 ## 🚀 Quick Start
 
@@ -91,16 +92,31 @@ dreamforge/
 
 ## 🎯 Features
 
-### Middle School Tier
+### Apprentice Tier
 - 🎮 Block-based visual programming
 - 🎨 Colorful, playful interface
 - 🏆 Achievement system
 - 💬 Enthusiastic AI mentor
 - 👀 Live code preview
 
-### Elder Tier
+### Journeyer Tier
+- ⌨️ Text-based coding with syntax highlighting
+- 🔄 Toggle between blocks and code view
+- 📚 Project-based learning challenges
+- 💬 Encouraging AI mentor with debugging tips
+- 🧪 Experiment sandbox mode
+
+### Craftsperson Tier
+- 💻 Full IDE integration
+- 🔧 Advanced debugging tools
+- 📦 Version control and collaboration features
+- 💬 Technical AI mentor with best practices
+- 🚀 Real-world project templates
+- 📈 Performance optimization insights
+- 🔗 API and framework documentation
+
+### Master Tier
 - 📝 Step-by-step project wizard
-- 🎤 Voice input support
 - 🔍 Large, high-contrast UI
 - ❓ Help button with clear explanations
 - 💬 Patient, respectful AI mentor
@@ -168,6 +184,14 @@ Before considering a component complete, verify:
 ## 📄 License
 
 MIT License
+
+## Team
+Fatima Mbodji - Developer
+
+Sri Mummidi - Developer 
+
+## Contact Questions? 
+Reach out to us at smummidi@terpmail.umd.edu
 
 ## 🙏 Acknowledgments
 
