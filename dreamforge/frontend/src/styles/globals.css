@@ -4,22 +4,24 @@
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-light-gray;
   }
-  
+
   body {
-    @apply bg-cream text-navy font-body;
+    @apply bg-off-white font-body;
+    color: #1a1a1a;
     font-size: 16px;
     line-height: 1.6;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading;
+    color: #522f5a; /* dark-purple for headings */
   }
 
   /* Focus styles for accessibility */
   *:focus-visible {
-    @apply outline-none ring-2 ring-primary ring-offset-2;
+    @apply outline-none ring-2 ring-star-orange ring-offset-2;
   }
 
   /* Scrollbar styling */
@@ -29,31 +31,102 @@
   }
 
   ::-webkit-scrollbar-track {
-    @apply bg-warmGray;
+    @apply bg-light-gray;
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-primary rounded-full;
+    @apply bg-dark-purple rounded-full;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-primary/80;
+    @apply bg-light-orange;
   }
 }
 
 @layer components {
-  /* Tier-specific base font sizes */
-  .tier-middleSchool {
+  /* ═══════════════════════════════════════════════════════ */
+  /* EXPERTISE TIER STYLES */
+  /* ═══════════════════════════════════════════════════════ */
+  .tier-beginner {
+    --tier-primary: #f2ae18;
+    --tier-secondary: #dcc0e3;
+    --tier-accent: #e19b5a;
+    --tier-bg: #faf9f8;
+  }
+
+  .tier-intermediate {
+    --tier-primary: #e19b5a;
+    --tier-secondary: #522f5a;
+    --tier-accent: #f2ae18;
+    --tier-bg: #ffffff;
+  }
+
+  .tier-advanced {
+    --tier-primary: #522f5a;
+    --tier-secondary: #e19b5a;
+    --tier-accent: #f2ae18;
+    --tier-bg: #1a1a1a;
+  }
+
+  /* ═══════════════════════════════════════════════════════ */
+  /* AGE RANGE FONT SIZES */
+  /* ═══════════════════════════════════════════════════════ */
+  .age-6-13 {
+    font-size: 16px;
+  }
+
+  .age-14-17 {
     font-size: 14px;
   }
 
-  .tier-elder {
-    font-size: 24px;
+  .age-18-24 {
+    font-size: 14px;
   }
 
-  /* Smooth transitions */
+  .age-25-54 {
+    font-size: 14px;
+  }
+
+  .age-55-plus {
+    font-size: 20px;
+    line-height: 1.8; /* Extra spacing for readability */
+  }
+
+  /* ═══════════════════════════════════════════════════════ */
+  /* UTILITY CLASSES */
+  /* ═══════════════════════════════════════════════════════ */
   .transition-smooth {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .gradient-beginner {
+    background: linear-gradient(135deg, #f2ae18 0%, #dcc0e3 100%);
+  }
+
+  .gradient-intermediate {
+    background: linear-gradient(135deg, #e19b5a 0%, #522f5a 100%);
+  }
+
+  .gradient-advanced {
+    background: linear-gradient(135deg, #522f5a 0%, #1a1a1a 100%);
+  }
+
+  .gradient-hero {
+    background: linear-gradient(135deg, #522f5a 0%, #dcc0e3 100%);
+  }
+
+  /* ═══════════════════════════════════════════════════════ */
+  /* ACCESSIBLE HIGH CONTRAST (for 55+ especially) */
+  /* ═══════════════════════════════════════════════════════ */
+  .high-contrast {
+    color: #1a1a1a;
+    background: #ffffff;
+  }
+
+  .high-contrast a,
+  .high-contrast button {
+    text-decoration: underline;
+    font-weight: 600;
   }
 }
 

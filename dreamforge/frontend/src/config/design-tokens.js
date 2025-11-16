@@ -1,40 +1,69 @@
-// Design tokens for DreamForge
+/**
+ * Design Tokens for DreamForge
+ * DEPRECATED: Use colors.js instead
+ * This file is kept for backward compatibility only
+ */
+
+// Import new color system
+import { colors as newColors, typography as newTypography } from './colors'
+
+// Re-export for backward compatibility
 export const colors = {
-  primary: '#8B7AB8',
-  secondary: '#FF8E72',
-  accent: '#F4C430',
-  cream: '#F5F1E8',
-  warmGray: '#E5E1DA',
-  navy: '#2C3E50'
+  // New vibrant colors from logo
+  darkPurple: newColors.brand.darkPurple,
+  lightPurple: newColors.brand.lightPurple,
+  lightOrange: newColors.brand.lightOrange,
+  starOrange: newColors.brand.starOrange,
+
+  // Kept for legacy support
+  primary: newColors.brand.darkPurple,
+  secondary: newColors.brand.lightOrange,
+  accent: newColors.brand.starOrange,
+  cream: newColors.neutral.offWhite,
+  warmGray: newColors.neutral.lightGray,
+  navy: newColors.brand.darkPurple
 }
 
 export const typography = {
-  heading: 'Outfit, sans-serif',
-  body: 'Inter, sans-serif',
-  code: 'JetBrains Mono, monospace'
+  heading: newTypography.heading,
+  body: newTypography.body,
+  code: newTypography.code
 }
 
+// Updated spacing for new tier system
 export const spacing = {
-  middleSchool: {
-    base: '14px',
-    padding: '1rem',
-    gap: '0.75rem'
-  },
-  elder: {
-    base: '24px',
-    padding: '2rem',
-    gap: '1.5rem'
-  },
-  default: {
+  beginner: {
     base: '16px',
     padding: '1.5rem',
     gap: '1rem'
+  },
+  intermediate: {
+    base: '14px',
+    padding: '1.25rem',
+    gap: '0.875rem'
+  },
+  advanced: {
+    base: '14px',
+    padding: '1.25rem',
+    gap: '0.875rem'
+  },
+  // Age-based overrides
+  age_6_13: {
+    base: '16px',
+    padding: '1.5rem',
+    gap: '1rem'
+  },
+  age_55_plus: {
+    base: '20px',
+    padding: '2rem',
+    gap: '1.5rem'
   }
 }
 
 export const borderRadius = {
   sm: '0.5rem',
   md: '1rem',
-  lg: '1.5rem'
+  lg: '1.5rem',
+  xl: '2rem'
 }
 
