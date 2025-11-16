@@ -7,6 +7,9 @@ export default function ChatInput({ onSend, tier, onVoiceInput }) {
   const [message, setMessage] = useState('')
   const inputRef = useRef(null)
 
+  // Edit
+
+
   useEffect(() => {
     // Auto-focus input for elder tier
     if (tier === 'elder' && inputRef.current) {
