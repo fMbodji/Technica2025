@@ -1,8 +1,8 @@
 // Design tokens for DreamForge
 export const colors = {
-  primary: '#8B7AB8',
-  secondary: '#FF8E72',
-  accent: '#F4C430',
+  primary: '#53355a',
+  secondary: '#c57022',
+  accent: '#c5afcf',
   cream: '#F5F1E8',
   warmGray: '#E5E1DA',
   navy: '#2C3E50'
